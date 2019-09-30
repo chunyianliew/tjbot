@@ -182,10 +182,10 @@ fi
 echo ""
 if [ $RASPIAN_VERSION_ID -eq 8 ]; then
     echo "Installing additional software packages for Jessie (alsa, libasound2-dev, git, pigpio)"
-    apt-get install -y alsa-base alsa-utils libasound2-dev git pigpio
+    apt-get install -y alsa-base alsa-utils libasound2-dev git pigpio sox-audio
 #elif [ $RASPIAN_VERSION -eq 9 ]; then
-#    echo "Installing additional software packages for Stretch (libasound2-dev)"
-#    apt-get install -y libasound2-dev
+    echo "Installing additional software packages for Stretch (sox-audio)"
+    apt-get install -y sox-audio
 fi
 
 #----remove outdated apt packages
@@ -231,7 +231,7 @@ fi
 
 if [ ! -d $TJBOT_DIR ]; then
     echo "Cloning TJBot project to $TJBOT_DIR"
-    sudo -u $SUDO_USER git clone https://github.com/ibmtjbot/tjbot.git $TJBOT_DIR
+    sudo -u $SUDO_USER git clone https://github.com/chunyianliew/tjbot.git $TJBOT_DIR
 else
     echo "TJBot project already exists in $TJBOT_DIR, leaving it alone"
 fi
