@@ -183,7 +183,7 @@ echo ""
 if [ $RASPIAN_VERSION_ID -eq 8 ]; then
     echo "Installing additional software packages for Jessie (alsa, libasound2-dev, git, pigpio)"
     apt-get install -y alsa-base alsa-utils libasound2-dev git pigpio sox-audio
-#elif [ $RASPIAN_VERSION -eq 9 ]; then
+elif [ $RASPIAN_VERSION_ID -eq 9 ]; then
     echo "Installing additional software packages for Stretch (sox-audio)"
     apt-get install -y sox-audio
 fi
